@@ -1,11 +1,12 @@
 
-const h11       = document.getElementById('h1')
-const switche   = document.getElementById('onoff')
-const inputE    = document.querySelectorAll('.subtask-label')
+const h11       = document.getElementById('h1');
+const switche   = document.getElementById('onoff');
+const but   = document.querySelectorAll('button');
+const inputE    = document.querySelectorAll('.subtask-label');
 
-const tareas    = document.querySelectorAll('.form__tarea')
-const deleteBs  = document.querySelectorAll('.toDo__btn2')
-const cardFooter= document.querySelectorAll('.card-footer')
+const tareas    = document.querySelector('.content');
+const toDo  = document.querySelector('#toDo');
+const wrapper= document.querySelector('#wrapper');
 
 const luz1 = document.getElementById('luz1');
 const luz2 = document.getElementById('luz2');
@@ -27,20 +28,20 @@ if (this.checked) {
     switche.classList.add('on');
     h11.style.color="black";
   
-    
         // Cambia el color de fondo de todos los elementos con la clase "mi-elemento"
-        inputE.forEach((elemento)       => {
-            elemento.style.color = 'black';
-        });
-    tareas.forEach((elemento)       => {
+    inputE.forEach((elemento)       => {
         elemento.style.color = 'black';
     });
-    // deleteBs.forEach((elemento)     => {
-    //     elemento.style.color = 'black';
-    // });
-    cardFooter.forEach((elemento)   => {
+    but.forEach((elemento)       => {
         elemento.style.color = 'black';
     });
+
+    toDo.style.color = 'black';
+
+    tareas.style.color = 'black';
+
+    wrapper.style.boxShadow = '3px 5px 10px rgba(255, 247, 247, 0.594)';
+   
     luces.forEach(luz               => {
         luz.style.display = 'block';
         luz.classList.remove('slide-out');
@@ -58,16 +59,17 @@ if (this.checked) {
     inputE.forEach((elemento)       => {
         elemento.style.color = 'white';
     });
+   
+    but.forEach((elemento)       => {
+        elemento.style.color = 'white';
+
+    });
+    tareas.style.color = 'white';
+  
+    toDo.style.color = 'white';
     
-    tareas.forEach((elemento)       => {
-        elemento.style.color = 'white';
-    });
-    // deleteBs.forEach((elemento)     => {
-    //     elemento.style.color = 'white';
-    // });
-    cardFooter.forEach((elemento)   => {
-        elemento.style.color = 'white';
-    });
+    wrapper.style.boxShadow = ' box-shadow: 3px 5px 10px rgb(33, 27, 27)';
+
 
     luces.forEach(luz               => {
         luz.classList.remove('slide-in');

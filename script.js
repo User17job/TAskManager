@@ -1,19 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault;
     const taskList = document.getElementById('ToDoList');
     const newTaskInput = document.getElementById('new-task');
     const addTaskButton = document.getElementById('add-task');
-    // const toggleThemeButton = document.getElementById('toggle-theme');
     let currentTheme = localStorage.getItem('theme') || 'light';
     document.body.setAttribute('data-theme', currentTheme);
-
-    // toggleThemeButton.addEventListener('click', () => {
-    //     currentTheme = currentTheme === 'light' ? 'dark' : 'light';
-    //     document.body.setAttribute('data-theme', currentTheme);
-    //     localStorage.setItem('theme', currentTheme);
-    // });
-
+   
     addTaskButton.addEventListener('click', () => addTask(newTaskInput.value));
-
+    
     function addTask(taskName) {
         if (taskName === '') return;
 

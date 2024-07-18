@@ -1,3 +1,4 @@
+
 body{
     margin: 0%;
     padding: 0%;
@@ -147,14 +148,17 @@ figure .img{
 
 #toDo{
   height: 100%;
-  width: 100%;
+  width:100%;
   position: absolute;
   border-radius: 75px;
-  border: solid;
+  border: solid 1px;
   transition:1s;
   color: white;
 }
-
+.content{
+  position: relative;
+  height: 90%;
+} 
 .content #form-1{
   height: 50px;
   display: grid;
@@ -192,31 +196,14 @@ ul{
   padding: 5px;
 }
 #contenido{
-  height: 325px;
+  /* border: solid 1px; */
+  height: 78%;
   overflow-y: scroll;
 }
 #contenido::-webkit-scrollbar{
   background-color:transparent;
-}
-#form-{
-  width: 100%;
-  height: 2rem;
-  position: relative;
-  display: flex;
-  color: white;
-}
-.form__tarea{
-  position: relative;
-  width: 100%;
-  height: 40px;
-  text-overflow: ellipsis;
-  text-wrap: nowrap;
-  overflow-x: hidden;
-  padding-left: 5px;
-  font-size: 25px;
-  left:3%;
-  color: white;
-}
+} 
+
 .contain{
   position: relative;
 }
@@ -268,7 +255,7 @@ ul{
   position: relative;
   border: solid 1px;
   border-radius: 10px;
-  background-color: #00190f;
+  background-color: #001119;
   padding-left: 4px;
   left: 2%;
 }
@@ -296,10 +283,10 @@ ul{
   left: 0;
 }
 .subcheckbx{
-  width: 50px;
+  transform: scale(1.85);
   position: absolute; 
   top: 10px;
-  left: 5px;
+  left: 10px;
 }
 .delete-SubTask{
   display: grid;
@@ -310,12 +297,14 @@ ul{
   border-radius: 4px;
   top: 0px;
   left: 25px;
+  color: white;
+  background-color: transparent;
 }
 
 .contenedor{
   background-color: #001029;
   color: aliceblue;
-  width: 80%;
+  width: 82%;
   height: 40px;
   border-radius: 10px;
 }
@@ -452,26 +441,53 @@ ul{
 }
 
 
-@media screen and (width<788px) {
+@media screen and (width<888px) {
+  .toDo__btn{
+    padding: 2.5px;
+  }
   .switch{
     position: absolute;
-    top: 14%;
     left: 85%;
-  }
-  #sectionContainer{
-    height: 80vh;
-  }
-  
-}
-@media screen and (width<600px) {
-  .switch{
-    position: absolute;
-    left: 80%;
+    top: 17%;
     transform: scale(0.8); 
   }
   #sectionContainer{
-    height: 88vh;
-  
+    height: 82vh;
   }
 
+  .subtask-item{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: flex;
+    left: 2%;
+  }
+  .subtask-label{
+    left: 15px;
+    overflow-x: scroll;
+    text-wrap: nowrap;
+    position: relative;
+    width: 75%;
+  }
+
+  .delete-SubTask{
+    border-radius: 4px;
+    top: 0px;
+    font-size: 10px;
+    left:30px;
+    color: white;
+    border: solid;
+    background-color: transparent;
+    position: relative;
+  }
+
+  h6{
+    font-size: 30px;
+    height: 70px;
+    width: 40%;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    left: 30%;
+    margin-top:-15px ;
+  }
 }
