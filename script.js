@@ -191,4 +191,4 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
     loadTasks();
 });
-
+navigator.serviceWorker.register('serviceWorker.js')
