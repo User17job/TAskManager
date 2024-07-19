@@ -58,18 +58,23 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request)
-      .then((response) => {
-        // Cache hit - return the response from the cache
-        if (response) {
-          return response;
-        }
-        return fetch(event.request);
-      })
-  );
-});
-
+    event.respondWith(
+      caches.match(event.request)
+        .then((response) => {
+          if (response) {
+            return response;
+          }
+          return fetch(event.request).catch((error) => {
+            console.error('Fetching failed:', error);
+            throw error;
+          });
+        }).catch((error) => {
+          console.error('Cache match failed:', error);
+          // Puedes devolver una respuesta alternativa aquí, como una página de error personalizada
+        })
+    );
+  });
+  
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
   event.waitUntil(
