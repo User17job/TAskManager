@@ -5,7 +5,7 @@ self.addEventListener('install', (event) => {
           '/styles.css',
           '/script.js',
           '/switch.js',
-          '/https://cdn-icons-png.flaticon.com/128/8246/8246320.png'
+          '/favicon.png'
         ]);
       })
     );
@@ -25,7 +25,7 @@ self.addEventListener('install', (event) => {
       })
     );
   });
-  
+
   self.addEventListener('fetch', (event) => {
     event.respondWith(
       caches.match(event.request).then((response) => {
